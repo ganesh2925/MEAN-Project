@@ -25,8 +25,27 @@ router.get('/', async function(req, res, next) {
       console.error(error);
       return res.status(500).send('Internal server error');
   }
+});
 
-  
+router.post('/register', function(req, res, next) {
+
+  var userDetails = new userModel({
+    name: req.body.Name,
+    email: req.body.Email,
+    password: req.body.Password,
+    
+  });
+
+  userDetails.save().then(resResult=>{
+    res.status(201).json({
+        msg:"Inserted Successfully",
+        results:resResult
+    });
+})
+.catch(err=>{
+    res.json(err);
+});
+
 });
 
 module.exports = router;

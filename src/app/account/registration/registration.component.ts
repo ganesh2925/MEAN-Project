@@ -8,12 +8,9 @@ import {Accountinfo} from '../accountinfo';
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent implements OnInit {
-  regForm: FormGroup = this.formbuilder.group({
-    Name: ['', [Validators.required]],
-    // other form controls
-  });
+  regForm!: FormGroup
   datasaved = false;
-  massage: string = ''; // initializing 'massage' property
+  message: string = ''; // initializing 'massage' property
   constructor(private formbuilder: FormBuilder, private accountservice: AccountserviceService) { }
 
   ngOnInit() {
@@ -38,7 +35,7 @@ export class RegistrationComponent implements OnInit {
     this.accountservice.createaccount(accinfo).subscribe(
       () => {
         this.datasaved = true;
-        this.massage = "User Created";
+        this.message = "User Created";
        this.regForm.reset();
       }
     )

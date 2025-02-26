@@ -19,10 +19,17 @@
     "target": "ES2022",
     "module": "ES2022",
     "useDefineForClassFields": false,
-    "lib": [
-      "ES2022",
-      "dom"
-    ]
+    "lib": ["ES2022","dom"],
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "emitDecoratorMetadata": true,
+    "rootDirs": ["src"],
+    "paths": {
+      "@app/*": ["src/app/*"]
+    },
+    "typeRoots": ["node_modules/@types", "types"]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

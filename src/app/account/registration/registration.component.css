@@ -1,0 +1,10 @@
+.form-group {
+    margin: 2rem;
+}
+.col-md-9 {
+    width: 100%;
+}
+
+.btn:hover {
+    background-color: #12da19;
+}
